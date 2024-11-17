@@ -1,12 +1,25 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  template: `
-    <h1>Welcome to Home Page</h1>
-    <p>This is the main entry point of the application.</p>
-  `,
-  styleUrls: ['./home.component.css']
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  imports: [CommonModule]
 })
-export class HomeComponent { }
+export class HomeComponent {
+  latestEvents = [
+    { name: 'Summer Wedding', date: '2023-09-12' },
+    { name: 'Corporate Meetup', date: '2023-08-25' },
+    { name: 'Family Reunion', date: '2023-08-05' }
+  ];
+
+  constructor(private router: Router) {}
+
+  onRegisterPhotographer() {
+    // Логика для перехода на страницу регистрации фотографа
+    this.router.navigate(['/register-photographer']);
+  }
+}

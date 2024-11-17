@@ -1,9 +1,14 @@
 import { Routes } from '@angular/router';
+import { RegisterPhotographerComponent } from './register-photographer/register-photographer.component';
+import { EventsComponent } from './events/events.component'
+import { PhotosComponent } from './photos/photos.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.routes').then(m => m.routes) },
-  { path: 'events', loadChildren: () => import('./events/events.routes').then(m => m.routes) },
-  { path: 'photos', loadChildren: () => import('./photos/photos.routes').then(m => m.routes) },
+  { path: 'home', component: HomeComponent },
+  { path: 'events', component: EventsComponent },
+  { path: 'photos', component: PhotosComponent },
+  { path: 'register-photographer', component: RegisterPhotographerComponent },
   { path: '**', redirectTo: '/home' }
 ];

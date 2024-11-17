@@ -1,10 +1,28 @@
-h1 {
-    text-align: center;
-    color: #FF5722;
-  }
-  
-  p {
-    text-align: center;
-    font-size: 18px;
-  }
-  
+.photos-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.photo-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.photo-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.photo-card p {
+  margin-top: 10px;
+  font-size: 14px;
+}

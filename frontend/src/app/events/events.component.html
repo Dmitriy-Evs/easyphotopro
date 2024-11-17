@@ -1,0 +1,13 @@
+<div class="events-container">
+  <h1>Events</h1>
+
+  <div *ngIf="loading">Loading events...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <ul *ngIf="!loading && !error" class="events-list">
+    <li *ngFor="let event of events" (click)="onSelectEvent(event.id)">
+      <h2>{{ event.name }}</h2>
+      <p>Date: {{ event.date }}</p>
+    </li>
+  </ul>
+</div>

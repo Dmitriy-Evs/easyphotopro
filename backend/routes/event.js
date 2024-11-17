@@ -34,10 +34,11 @@ router.post('/', auth, async (req, res) => {
 // @access  Public
 router.get('/', async (req, res) => {
   try {
-    const events = await Event.find();
-    res.json(events);
+    const events = await Event.find(); // Получение всех событий из базы данных
+    res.status(200).json(events);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error(err.message);
+    res.status(500).json({ error: 'Failed to fetch events' });
   }
 });
 

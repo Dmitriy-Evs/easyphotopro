@@ -1,0 +1,14 @@
+<div class="home-container">
+    <h1>Welcome to EasyPhotoPro</h1>
+    <p>Your ultimate platform for photographers and clients. Upload, manage, and purchase event photos with ease.</p>
+  
+    <div class="latest-events">
+      <h2>Latest Events</h2>
+      <ul>
+        <li *ngFor="let event of latestEvents">{{ event.name }} - {{ event.date }}</li>
+      </ul>
+    </div>
+  
+    <button class="register-button" (click)="onRegisterPhotographer()">Register as Photographer</button>
+  </div>
+  
